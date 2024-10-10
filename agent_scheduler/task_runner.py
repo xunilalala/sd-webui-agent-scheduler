@@ -404,10 +404,11 @@ class TaskRunner:
 
                 self.__saved_images_path = []
             else:
-                log.info(f"\n[AgentScheduler] sleep 5min")
-                time.sleep(300)
+                time.sleep(2)
                 continue
-
+            # 高温管控
+            log.info("\n[高温管控] 暂停5min等待显卡降温\n")
+            time.sleep(300)
             task = get_next_task()
             if not task:
                 if not self.paused:
