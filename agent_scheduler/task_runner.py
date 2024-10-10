@@ -404,7 +404,8 @@ class TaskRunner:
 
                 self.__saved_images_path = []
             else:
-                time.sleep(2)
+                log.info(f"\n[AgentScheduler] sleep 5min")
+                time.sleep(300)
                 continue
 
             task = get_next_task()
