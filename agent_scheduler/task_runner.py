@@ -407,8 +407,8 @@ class TaskRunner:
                 time.sleep(2)
                 continue
             # 高温管控
-            log.info("\n[高温管控] 暂停5min等待显卡降温\n")
-            time.sleep(300)
+            log.info("\n[高温管控] 暂停2min等待显卡降温\n")
+            time.sleep(120)
             task = get_next_task()
             if not task:
                 if not self.paused:
