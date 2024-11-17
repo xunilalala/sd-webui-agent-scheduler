@@ -759,6 +759,16 @@ def on_ui_settings():
             section=section,
         ),
     )
+    shared.opts.add_option(
+        "高温管控时间",
+        shared.OptionInfo(
+            "",
+            "高温控制时间（以秒为单位）",
+            gr.Textbox,
+            {"interactive": True},
+            section=section,
+        ),
+    )
 
 
 def on_app_started(block: gr.Blocks, app):
