@@ -407,8 +407,10 @@ class TaskRunner:
                 time.sleep(2)
                 continue
             # 高温管控
-            log.info("\n[高温管控] 暂停2min等待显卡降温\n")
-            time.sleep(120)
+            temp_sleep_time = getattr(shared.opts, "high_temperature_control_time", 120)  # 获取 temp_sleep_time，默认值为 120
+            log.info(f"\n[高温管控] 暂停{temp_sleep_time}秒等待显卡降温\n")
+            time.sleep(temp_sleep_time)
+
             task = get_next_task()
             if not task:
                 if not self.paused:

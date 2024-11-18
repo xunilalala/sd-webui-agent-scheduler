@@ -760,7 +760,7 @@ def on_ui_settings():
         ),
     )
     shared.opts.add_option(
-        "高温管控时间",
+        "high_temperature_control_time",
         shared.OptionInfo(
             "",
             "高温控制时间（以秒为单位）",
